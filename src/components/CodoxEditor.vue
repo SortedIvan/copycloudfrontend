@@ -82,7 +82,7 @@ export default {
     async mounted() {
       
             // 1. Get the current logged in user 
-            let email = await axios.get(`http://20.106.111.151/api/getcurrentuser`,{
+            let email = await axios.get(`http://4.227.56.142/api/getcurrentuser`,{
             withCredentials: true
             });
 
@@ -93,10 +93,10 @@ export default {
             this.currentProjectId = projectId;
 
             console.log(projectId)
-            let projectExists = await axios.post("http://20.106.111.151/api/checkprojectexists?projectId="+ projectId, { withCredentials:true});
+            let projectExists = await axios.post("http://4.227.56.142/api/checkprojectexists?projectId="+ projectId, { withCredentials:true});
             // 3. Check if user is in project
             let userInProject = false;
-            const response = await axios.post('http://20.106.111.151/api/checkuserinproject?projectId=' + projectId, {}, { withCredentials: true, headers: { Accept: 'text/plain' } });
+            const response = await axios.post('http://4.227.56.142/api/checkuserinproject?projectId=' + projectId, {}, { withCredentials: true, headers: { Accept: 'text/plain' } });
             const { data } = response;
             userInProject = data;
             console.log(data ); // Do something with the response data
@@ -133,9 +133,9 @@ export default {
                 this.editorReady = true;
 
                 
-                let documentContent = await axios.get("http://20.106.111.151/api/getdocumentcontent?projectId="+projectId, { withCredentials: true})
+                let documentContent = await axios.get("http://4.227.56.142/api/getdocumentcontent?projectId="+projectId, { withCredentials: true})
 
-                let projectDetails = await axios.get("http://20.106.111.151/api/getprojectbyid?projectId="+projectId, {withCredentials: true});
+                let projectDetails = await axios.get("http://4.227.56.142/api/getprojectbyid?projectId="+projectId, {withCredentials: true});
 
                 if (editor.getText() === "") {
                   editor.setText(documentContent.data + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -168,7 +168,7 @@ export default {
                 }
 
             try {
-              let invitedToProject = await axios.post("http://localhost:8001/api/invitetoproject", invite, { withCredentials:true});
+              let invitedToProject = await axios.post("http://4.227.56.142/api/invitetoproject", invite, { withCredentials:true});
               if (invitedToProject){
                 this.inviteSent = true;
               }
@@ -185,7 +185,7 @@ export default {
             "projectId": this.currentProjectId,
             "content": content
           }
-          let response = await axios.post('http://localhost:8001/api/savedocument', save, { withCredentials: true, headers: { Accept: '*/*' } });
+          let response = await axios.post('http://4.227.56.142/api/savedocument', save, { withCredentials: true, headers: { Accept: '*/*' } });
 
 
           console.log(response.data);
@@ -199,7 +199,7 @@ export default {
           }
           
           try {
-            let projectInviteResult = await axios.post("http://localhost:8001/api/createprojectinvite", invite, {withCredentials: true});
+            let projectInviteResult = await axios.post("http://4.227.56.142/api/createprojectinvite", invite, {withCredentials: true});
             this.projectInvite = projectInviteResult.data;
             navigator.clipboard.writeText(this.projectInvite);
           }

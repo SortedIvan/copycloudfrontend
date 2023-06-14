@@ -182,7 +182,7 @@
       async createProject(withTemplate){
         try {
           let project = {"projectName":this.projectTitle, "projectDescription":this.projectDescription,"projectCreator":""}
-          const response = await axios.post('http://20.106.111.151/api/createproject', project, { withCredentials: true, headers: { Accept: '*/*' } });
+          const response = await axios.post('http://4.227.56.142/api/createproject', project, { withCredentials: true, headers: { Accept: '*/*' } });
           this.createdProject = response.data;
           var baseUrl = window.location.origin;
 
@@ -236,7 +236,7 @@
         let data = []
         
         try {
-          let projects = await axios.get("http://20.106.111.151/api/getallprojects",{ withCredentials: true});
+          let projects = await axios.get("http://4.227.56.142/api/getallprojects",{ withCredentials: true});
           this.items = projects.data;
           console.log(this.items)
         }
@@ -259,7 +259,7 @@
       async deleteProject(item) {
         if (this.projectDeletionConfirmation && this.projectDeletionConfirmCount === 1) {
           console.log(item);
-          const response = await axios.post('http://localhost:8001/api/deleteproject?projectId='+ item, {}, { withCredentials: true, headers: { Accept: '*/*' } });
+          const response = await axios.post('http://4.227.56.142/api/deleteproject?projectId='+ item, {}, { withCredentials: true, headers: { Accept: '*/*' } });
 
           console.log(response.data);
           if (response.data) {
@@ -296,7 +296,7 @@
         uploadData.append('Template', this.fileToUpload);
 
         console.log("broken2")
-        let response = await axios.post('http://20.106.111.151/api/createprojectwithtemplate', uploadData, { withCredentials: true, headers: { 'Content-Type': 'multipart/form-data' } });
+        let response = await axios.post('http://4.227.56.142/api/createprojectwithtemplate', uploadData, { withCredentials: true, headers: { 'Content-Type': 'multipart/form-data' } });
         
         console.log(response.data + "is response")
 
