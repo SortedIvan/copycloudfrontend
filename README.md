@@ -1,20 +1,57 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# [Vue Light Bootstrap Dashboard](http://vuejs.creative-tim.com/vue-light-bootstrap-dashboard) [![version][version-badge]][changelog] [![license][license-badge]][license]
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+> Admin dashboard based on light bootstrap dashboard UI template + vue-router
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This project is a vue version of [Light bootstrap dashboard](https://www.creative-tim.com/product/light-bootstrap-dashboard)
+designed for vue js. The dashboard includes Bootstrap 4, vue-router, chartist, google-maps and several other plugins/components.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Check the [Live Demo here](http://vuejs.creative-tim.com/vue-light-bootstrap-dashboard).
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+![](public/Dashboard.PNG)
+
+## :rocket: Getting started
+
+Vue Light Bootstrap Dashboard is built on top of Bootstrap 4, Vuejs and Vue-router. To get started do the following steps:
+
+1. Download the project
+2. Make sure you have node.js (https://nodejs.org/en/) installed
+3. Type `npm install` in the source folder where `package.json` is located
+4. Type `npm run dev` to start the development server
+
+The repo uses [vue-cli](https://github.com/vuejs/vue-cli) scaffolding which takes care of the development setup with webpack and all the necessary modern tools to make web development faster and easier.
+
+## [Documentation](https://demos.creative-tim.com/vue-light-bootstrap-dashboard/documentation/#/buttons)
+
+## :cloud: Build Setup
+
+### install dependencies
+
+`npm install`
+
+### serve with hot reload at localhost:8000
+
+`npm run dev`
+
+### build for production with minification
+
+`npm run build`
+
+### run unit tests
+
+`npm run unit`
+
+### run and watch unit tests
+
+`npm run unit:watch`
+
+## :clipboard: Contribution guide
+
+- `npm install` or `yarn install`
+- Please don't use jQuery or jQuery based plugins since there are many pure Vue alternatives
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+[changelog]: ./CHANGELOG.md
+[license]: ./LICENSE.md
+[version-badge]: https://img.shields.io/badge/version-2.1.0-blue.svg
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
