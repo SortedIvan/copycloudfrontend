@@ -12,7 +12,7 @@
           let pusher = new Pusher("4976b018f55020dd0b34", {
             cluster: "eu",
             encrypted: true,
-            authEndpoint: 'http://20.106.111.151//api/authenticatepusher',
+            authEndpoint: 'https://copycloud.work/api/authenticatepusher',
           });
           this.channel = pusher.subscribe("private-markdown");
           this.channel.bind("client-new-text", data => {

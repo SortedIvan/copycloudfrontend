@@ -99,7 +99,7 @@
 	},
 	methods: {
 	  register(){
-		let success = axios.post("http://4.227.56.142/api/register", {
+		let success = axios.post("https://copycloud.work/api/register", {
 		"name": "test",
 		"password": this.password,
 		"confirmPassword": this.password,
@@ -112,7 +112,7 @@
 				"email": this.email,
 				"password": this.password
 			}
-			let success = await axios.post("http://4.227.56.142/api/login", loginCreds, {headers: { Accept: '*/*', "Content-Type":'application/json'}, withCredentials: true});
+			let success = await axios.post("https://copycloud.work/api/login", loginCreds, {headers: { Accept: '*/*', "Content-Type":'application/json'}, withCredentials: true});
 
 			if (success.status != 200) {
 				this.passwordWrong = true;
